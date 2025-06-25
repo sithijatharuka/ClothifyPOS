@@ -25,7 +25,7 @@
                         GridPane.halignment="RIGHT"/>
             </GridPane>
 
-            <Hyperlink fx:id="linkForgotPassword" text="Forgot Password?"/>
+            <Hyperlink fx:id="linkForgotPassword" onAction="#handleForgotPassword" text="Forgot Password?"/>
             <Hyperlink fx:id="linkRegister" onAction="#goToSignUpPage" text="Register New User (Admin Only)" />
 
         </VBox>

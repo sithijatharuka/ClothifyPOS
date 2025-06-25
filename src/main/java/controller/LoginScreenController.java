@@ -28,7 +28,7 @@ public class LoginScreenController {
     public void initialize() {
         btnLogin.setOnAction(this::handleLogin);
 //        linkRegister.setOnAction(this::handleRegister);
-        linkForgotPassword.setOnAction(this::handleForgotPassword);
+     //   linkForgotPassword.setOnAction(this::handleForgotPassword);
     }
 
     private void handleLogin(ActionEvent event) {
@@ -90,8 +90,13 @@ public class LoginScreenController {
         stage.show();
     }
 
-
-    private void handleForgotPassword(ActionEvent event) {
-//        new Alert(AlertType.INFORMATION, "Password reset is not implemented yet!").show();
+    @FXML
+    private void handleForgotPassword(ActionEvent event) throws IOException {
+        Stage stage = (Stage) linkRegister.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/view/forgot_password.fxml")); // signup page
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Clothify POS - Register");
+        stage.show();
     }
 }
