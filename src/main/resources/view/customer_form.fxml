@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="467.0" prefWidth="567.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.CustomerController">
+    <children>
+        <Text font="$x2" layoutX="20" layoutY="40" text="Customer Management">
+            <font>
+                <Font name="System Bold" size="24" />
+            </font>
+        </Text>
+
+        <GridPane hgap="10" layoutX="20" layoutY="60" vgap="10">
+            <children>
+                <Label text="Customer ID:" />
+                <Label text="Name:" GridPane.rowIndex="1" />
+                <Label text="Email:" GridPane.rowIndex="2" />
+                <Label text="Phone:" GridPane.rowIndex="3" />
+
+                <TextField fx:id="txtCustomerId" GridPane.columnIndex="1" />
+                <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <HBox layoutX="20" layoutY="230" spacing="10">
+            <children>
+                <Button fx:id="btnAdd" onAction="#btnAddClick" text="Add" />
+                <Button onAction="#btnSearchClick" text="Search" />
+                <Button onAction="#btnUpdateClick" text="Update" />
+                <Button onAction="#btnDeleteClick" text="Delete" />
+                <Button onAction="#btnReloadClick" text="Reload" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="tblCustomers" layoutX="10.0" layoutY="265.0" prefHeight="174.0" prefWidth="546.0" AnchorPane.bottomAnchor="27.599999999999994" AnchorPane.leftAnchor="10.200000000000045" AnchorPane.rightAnchor="10.600000000000023" AnchorPane.topAnchor="265.4">
+            <columns>
+                <TableColumn fx:id="colCustomerId" prefWidth="100" text="Customer ID" />
+                <TableColumn fx:id="colName" prefWidth="150" text="Name" />
+                <TableColumn fx:id="colEmail" prefWidth="150" text="Email" />
+                <TableColumn fx:id="colPhone" prefWidth="120" text="Phone" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

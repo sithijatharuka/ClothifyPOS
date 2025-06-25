@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderController">
+
+    <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="Place New Order" />
+
+    <!-- Customer Selection -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Customer ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cmbCustomerId" promptText="Select Customer ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtCustomerName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+<!--        <Label text="City:" GridPane.columnIndex="0" GridPane.rowIndex="2" />-->
+<!--        <TextField fx:id="txtCity" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <Separator />
+
+    <!-- Product Selection -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Item ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cmbItemId" promptText="Select Item ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Item Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtItemName" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtPrice" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Available Stock:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="txtAvailableStock" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Quantity:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Spinner fx:id="spnQuantity" initialValue="1" max="100" min="1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button onAction="#addToCart" style="-fx-font-weight: bold; -fx-pref-width: 120;" text="Add to Cart" />
+    </HBox>
+
+    <!-- Order Items Table -->
+    <Label style="-fx-font-weight: bold;" text="Order Items" />
+    <TableView fx:id="tblCart" prefHeight="200.0" prefWidth="564.0">
+        <columns>
+            <TableColumn fx:id="colItemId" text="Item ID" prefWidth="100"/>
+            <TableColumn fx:id="colItemName" text="Item Name" prefWidth="150"/>
+            <TableColumn fx:id="colQty" text="Quantity" prefWidth="80"/>
+            <TableColumn fx:id="colPrice" text="Price" prefWidth="80"/>
+            <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+
+    <!-- Order Summary -->
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label style="-fx-font-weight: bold;" text="Subtotal:" />
+        <Label fx:id="lblSubtotal" style="-fx-font-weight: bold;" text="0.00" />
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label style="-fx-font-weight: bold;" text="Tax (10%):" />
+        <Label fx:id="lblTax" style="-fx-font-weight: bold;" text="0.00" />
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Total:" />
+        <Label fx:id="lblTotal" style="-fx-font-size: 16; -fx-font-weight: bold;" text="0.00" />
+    </HBox>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button onAction="#clearOrder" style="-fx-pref-width: 120;" text="Clear Order" />
+        <Button onAction="#placeOrder" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 120;" text="Place Order" />
+    </HBox>
+</VBox>

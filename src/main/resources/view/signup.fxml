@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.SignUpController">
+
+    <StackPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <VBox alignment="CENTER" spacing="20" maxWidth="300" style="-fx-padding: 20;">
+
+            <Label text="Register New User" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+            <GridPane hgap="10" vgap="15">
+                <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtUsername" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+
+                <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="txtPassword" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="200"/>
+
+                <Label text="Confirm Password:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="txtConfirmPassword" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+
+                <Button fx:id="btnSignUp" onAction="#signUp" text="Sign Up" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                        GridPane.halignment="RIGHT" />
+            </GridPane>
+
+            <Hyperlink fx:id="linkBackToLogin" onAction="#backToLogin" text="Back to Login"/>
+        </VBox>
+    </StackPane>
+</AnchorPane>
