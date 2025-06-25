@@ -92,6 +92,6 @@ public class LoginScreenController {
 
 
     private void handleForgotPassword(ActionEvent event) {
-        new Alert(AlertType.INFORMATION, "Password reset is not implemented yet!").show();
+//        new Alert(AlertType.INFORMATION, "Password reset is not implemented yet!").show();
     }
 }
